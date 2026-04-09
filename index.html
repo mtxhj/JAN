@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="survey-container">
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <div class="progress-text" id="progressText">1 / 3</div>
+
+    <div id="questionPage" class="question-page">
+      <h2 class="question-title" id="questionTitle"></h2>
+      <div class="options" id="optionsContainer"></div>
+    </div>
+
+    <div id="resultPage" class="result-page hidden">
+      <h2>Thank you for completing the survey!</h2>
+      <div id="resultSummary" class="result-summary"></div>
+    </div>
+
+    <div class="nav-buttons">
+      <button id="nextBtn" class="btn btn-next" disabled>Next</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
