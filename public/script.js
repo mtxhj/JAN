@@ -1,32 +1,4 @@
-const questions = [
-  {
-    title: "1. Which programming language do you use most frequently?",
-    options: [
-      { letter: "A", text: "JavaScript" },
-      { letter: "B", text: "Python" },
-      { letter: "C", text: "Java" },
-      { letter: "D", text: "C++" },
-    ],
-  },
-  {
-    title: "2. What is your preferred development environment?",
-    options: [
-      { letter: "A", text: "VS Code" },
-      { letter: "B", text: "IntelliJ IDEA" },
-      { letter: "C", text: "Vim / Neovim" },
-      { letter: "D", text: "Sublime Text" },
-    ],
-  },
-  {
-    title: "3. How many years of programming experience do you have?",
-    options: [
-      { letter: "A", text: "Less than 1 year" },
-      { letter: "B", text: "1 – 3 years" },
-      { letter: "C", text: "3 – 5 years" },
-      { letter: "D", text: "More than 5 years" },
-    ],
-  },
-];
+let questions = [];
 
 let currentIndex = 0;
 const answers = {};
@@ -139,4 +111,13 @@ restartBtn.addEventListener("click", () => {
   renderQuestion();
 });
 
-renderQuestion();
+fetch("/api/questions")
+  .then((res) => res.json())
+  .then((data) => {
+    questions = data;
+    renderQuestion();
+  })
+  .catch((err) => {
+    console.error("Failed to load questions:", err);
+    questionTitle.textContent = "Failed to load survey. Please refresh.";
+  });
