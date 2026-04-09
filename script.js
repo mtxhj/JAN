@@ -39,6 +39,7 @@ const progressText = document.getElementById("progressText");
 const questionPage = document.getElementById("questionPage");
 const resultPage = document.getElementById("resultPage");
 const resultSummary = document.getElementById("resultSummary");
+const restartBtn = document.getElementById("restartBtn");
 
 function renderQuestion() {
   const q = questions[currentIndex];
@@ -101,6 +102,7 @@ function showResults() {
   questionPage.classList.add("hidden");
   resultPage.classList.remove("hidden");
   nextBtn.classList.add("hidden");
+  restartBtn.classList.remove("hidden");
   progressText.textContent = "Completed";
   progressFill.style.width = "100%";
 
@@ -125,6 +127,16 @@ nextBtn.addEventListener("click", () => {
   } else {
     showResults();
   }
+});
+
+restartBtn.addEventListener("click", () => {
+  currentIndex = 0;
+  Object.keys(answers).forEach((k) => delete answers[k]);
+  resultPage.classList.add("hidden");
+  questionPage.classList.remove("hidden");
+  nextBtn.classList.remove("hidden");
+  restartBtn.classList.add("hidden");
+  renderQuestion();
 });
 
 renderQuestion();

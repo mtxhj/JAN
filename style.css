@@ -33,7 +33,7 @@ body {
 
 .progress-fill {
   height: 100%;
-  background: #4f46e5;
+  background: #0ABAB5;
   border-radius: 4px;
   width: 33.3%;
   transition: width 0.4s ease;
@@ -74,13 +74,13 @@ body {
 }
 
 .option-label:hover {
-  border-color: #4f46e5;
-  background: #f8f7ff;
+  border-color: #0ABAB5;
+  background: #e6faf9;
 }
 
 .option-label.selected {
-  border-color: #4f46e5;
-  background: #ede9fe;
+  border-color: #0ABAB5;
+  background: #ccf3f1;
 }
 
 .option-label input[type="radio"] {
@@ -103,7 +103,7 @@ body {
 }
 
 .option-label.selected .option-letter {
-  background: #4f46e5;
+  background: #0ABAB5;
   color: #fff;
 }
 
@@ -115,6 +115,7 @@ body {
   margin-top: 32px;
   display: flex;
   justify-content: flex-end;
+  gap: 12px;
 }
 
 .btn {
@@ -128,17 +129,27 @@ body {
 }
 
 .btn-next {
-  background: #4f46e5;
+  background: #0ABAB5;
   color: #fff;
 }
 
 .btn-next:hover:not(:disabled) {
-  background: #4338ca;
+  background: #099E9A;
 }
 
 .btn-next:disabled {
   background: #c7c7c7;
   cursor: not-allowed;
+}
+
+.btn-restart {
+  background: #fff;
+  color: #0ABAB5;
+  border: 2px solid #0ABAB5;
+}
+
+.btn-restart:hover {
+  background: #e6faf9;
 }
 
 .hidden {
@@ -160,9 +171,9 @@ body {
 
 .result-item {
   padding: 16px;
-  background: #f8f7ff;
+  background: #e6faf9;
   border-radius: 12px;
-  border-left: 4px solid #4f46e5;
+  border-left: 4px solid #0ABAB5;
 }
 
 .result-item .result-question {
@@ -173,6 +184,6 @@ body {
 }
 
 .result-item .result-answer {
-  color: #4f46e5;
+  color: #0ABAB5;
   font-size: 15px;
 }
